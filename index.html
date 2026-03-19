@@ -230,7 +230,7 @@
                     <p style="text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">Powered By Global Standards</p>
                 </div>
                 <div style="display: flex; gap: 4rem; justify-content: center; align-items: center; flex-wrap: wrap; opacity: 0.5;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.5rem;"><i data-lucide="zap" style="color: #3b82f6;"></i> OpenAI GPT-4o</div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.5rem;"><i data-lucide="zap" style="color: #3b82f6;"></i> OpenAI GPT-5.4</div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.5rem;"><i data-lucide="cloud" style="color: #8b5cf6;"></i> Google Gemini Pro</div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.5rem;"><i data-lucide="database" style="color: #06b6d4;"></i> Anthropic Claude</div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.5rem;"><i data-lucide="code" style="color: #111;"></i> LangChain & LlamaIndex</div>
@@ -512,8 +512,14 @@
         }
         
         function processPaymentStub() {
-            alert('대표님, 이 시스템은 데모용입니다! 실제 결제 연동은 API 키 세팅 시 즉시 활성화됩니다.');
-            hideCheckoutModal();
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="lucide-refresh-cw spin" style="width: 16px;"></i> Processing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                location.href = 'payment-success.html';
+            }, 2000);
         }
     </script>
 </body>

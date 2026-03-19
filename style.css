@@ -615,3 +615,75 @@ footer {
   .premium-banner h2 { font-size: 2.5rem; }
   .navbar .btn { display: none; }
 }
+
+/* Subpage Styles */
+.subpage .navbar {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #eff6ff;
+    color: var(--accent-blue);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-header h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.case-header .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+}
+
+.case-content h3 {
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--text-primary);
+}
+
+.case-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.case-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.case-content li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.case-content li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .case-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .case-header h1 {
+        font-size: 2.5rem;
+    }
+}

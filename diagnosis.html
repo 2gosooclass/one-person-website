@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무료 AI 자동화 진단 | 2GOSOO AI LAB</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="subpage">
+    <header class="navbar scrolled">
+        <div class="container">
+            <div class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+                <span class="logo-accent">2GOSOO</span> AI LAB
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#results">Results</a>
+            </nav>
+            <button class="btn btn-primary" onclick="location.href='index.html'">홈으로</button>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px; min-height: 80vh; display: flex; align-items: center;">
+        <div class="container" style="max-width: 800px;">
+            <div class="glass-card reveal" style="padding: 4rem; border-radius: 40px; box-shadow: var(--shadow-premium);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h1 class="text-gradient" style="font-size: 3.5rem;">Free AI ROI <br>Analysis</h1>
+                    <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 1rem;">현재 대표님의 업무 중 자동화 가능한 부분을 계산해 드립니다.</p>
+                </div>
+
+                <div style="background: #f8fafc; padding: 2rem; border-radius: 20px; margin-bottom: 2rem; border: 1px dashed #cbd5e1;">
+                    <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">
+                        <i data-lucide="info" style="width: 16px; display: inline-block;"></i> 현재 가장 많은 시간을 뺏고 있는 반복 업무를 3-5가지 정도 나열해 주세요. <br>
+                        진단 버튼을 누르면 인건비 대비 절약 가능한 예상 비용을 즉시 산출해 드립니다.
+                    </p>
+                </div>
+
+                <div style="display: grid; gap: 1.5rem;">
+                    <textarea placeholder="예: 매일 반복되는 송장 번호 입력, 이메일 문의 응대, 유튜브 쇼츠 대본 작성 등" style="width: 100%; height: 200px; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 1rem;"></textarea>
+                    <button class="btn btn-gradient" style="justify-content: center; padding: 1.5rem; border-radius: 20px; font-size: 1.25rem;">
+                        <i data-lucide="sparkles"></i> AI로 예상 절감 효율 진단하기
+                    </button>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 2rem; background: var(--gradient-premium); color: white; border-radius: 20px; text-align: center; opacity: 0.1;" id="result-dummy">
+                    <p>진단 중입니다...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 4rem; border-top: 1px solid #eee; padding: 4rem 0;">
+        <div class="container" style="text-align: center;">
+            <div class="logo"><span class="logo-accent">2GOSOO</span> AI LAB</div>
+            <p style="margin: 1rem 0; color: var(--text-muted);">© 2026 2GOSOO AI LAB | Chicago, IL</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

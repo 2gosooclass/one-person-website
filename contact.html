@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담 신청 | 2GOSOO AI LAB</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="subpage">
+    <header class="navbar scrolled">
+        <div class="container">
+            <div class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+                <span class="logo-accent">2GOSOO</span> AI LAB
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#results">Results</a>
+            </nav>
+            <button class="btn btn-primary" onclick="location.href='index.html'">홈으로</button>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px; min-height: 80vh; display: flex; align-items: center;">
+        <div class="container" style="max-width: 800px;">
+            <div class="glass-card reveal" style="padding: 4rem; border-radius: 40px; box-shadow: var(--shadow-premium);">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h1 class="text-gradient" style="font-size: 3rem;">Ready to Automate?</h1>
+                    <p style="font-size: 1.25rem; color: var(--text-muted); margin-top: 1rem;">시카고 전문가와의 고품격 AI 컨설팅을 지금 바로 신청하세요.</p>
+                </div>
+
+                <div style="display: grid; gap: 2rem;">
+                    <button class="btn btn-gradient" style="justify-content: center; padding: 2rem; border-radius: 20px; font-size: 1.25rem;" onclick="window.open('https://open.kakao.com/o/s-your-link')">
+                        <i data-lucide="message-circle"></i> 카카오톡 즉시 상담 (추천)
+                    </button>
+                    
+                    <button class="btn btn-outline" style="justify-content: center; padding: 2rem; border-radius: 20px; font-size: 1.25rem;" onclick="window.open('mailto:2gosooclass@gmail.com')">
+                        <i data-lucide="mail"></i> 이메일 협업 제안
+                    </button>
+                    
+                    <button class="btn btn-primary" style="justify-content: center; padding: 2rem; border-radius: 20px; font-size: 1.25rem;" onclick="window.open('https://calendly.com/')">
+                        <i data-lucide="calendar"></i> 시카고 현지 전문가 화상 미팅 예약
+                    </button>
+                </div>
+
+                <div style="margin-top: 3rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                    <p>현재 미국 시카고(CST) 시간 기준 업무 시간 외일 경우 대기 시간이 발생할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 4rem; border-top: 1px solid #eee; padding: 4rem 0;">
+        <div class="container" style="text-align: center;">
+            <div class="logo"><span class="logo-accent">2GOSOO</span> AI LAB</div>
+            <p style="margin: 1rem 0; color: var(--text-muted);">© 2026 2GOSOO AI LAB | Chicago, IL</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

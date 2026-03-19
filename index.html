@@ -455,7 +455,7 @@
                     <p style="margin-top: 1.5rem; line-height: 1.6;">
                         <strong>Chicago HQ:</strong> 2GOSOO AI LAB, Chicago, IL, USA <br>
                         <strong>Email:</strong> <a href="mailto:2gosooclass@gmail.com" style="color: var(--text-secondary);">2gosooclass@gmail.com</a> <br>
-                        <strong>Phone:</strong> <a href="tel:+13120000000" style="color: var(--text-secondary);">+1 (312) 000-0000</a> (Main)
+                        <strong>Phone:</strong> <a href="tel:2246282377" style="color: var(--text-secondary);">224-628-2377</a> (Main)
                     </p>
                 </div>
                 <div class="social-links">
@@ -478,19 +478,28 @@
             <div style="text-align: center; margin-bottom: 2rem;">
                 <div id="modalPlanName" style="font-weight: 800; color: #3b82f6; margin-bottom: 0.5rem;">PLAN NAME</div>
                 <div id="modalPrice" style="font-size: 2.5rem; font-weight: 800;">$0</div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Secure Checkout by <strong style="color: #64748b;">Stripe</strong></p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Secure Checkout by <strong style="color: #64748b;">PayPal</strong></p>
             </div>
             
-            <form style="display: grid; gap: 1rem;">
-                <input type="email" placeholder="이메일 주소" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
-                <input type="text" placeholder="카드 번호 (0000 0000 0000 0000)" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <input type="text" placeholder="MM/YY" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
-                    <input type="text" placeholder="CVC" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
-                </div>
-                <button type="button" class="btn btn-primary" style="width: 100%; padding: 1.25rem; margin-top: 1rem;" onclick="processPaymentStub()">
-                    구독 시작하기 <i data-lucide="shield-check"></i>
+            <div style="display: grid; gap: 1rem;">
+                <!-- Simulated PayPal Smart Button -->
+                <button type="button" class="btn" style="width: 100%; padding: 1rem; background: #ffc439; color: #111; font-weight: 700; border-radius: 8px; justify-content: center;" onclick="processPaymentStub()">
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" style="height: 20px; vertical-align: middle; margin-right: 8px;"> PayPal로 결제하기
                 </button>
+                
+                <div style="text-align: center; font-size: 0.8rem; color: #94a3b8; margin: 0.5rem 0;">또는 신용카드로 결제</div>
+                
+                <form style="display: grid; gap: 1rem;">
+                    <input type="email" placeholder="이메일 주소" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <input type="text" placeholder="카드 번호" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" placeholder="MM/YY" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                        <input type="text" placeholder="CVC" style="width: 100%; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    </div>
+                    <button type="button" class="btn btn-primary" style="width: 100%; padding: 1.25rem; margin-top: 1rem;" onclick="processPaymentStub()">
+                        결제하기 <i data-lucide="shield-check"></i>
+                    </button>
+                </div>
                 <div style="display: flex; gap: 0.5rem; justify-content: center; align-items: center; margin-top: 1rem; opacity: 0.6; font-size: 0.7rem;">
                     <i data-lucide="lock" style="width: 12px;"></i> All transactions are secure and encrypted.
                 </div>

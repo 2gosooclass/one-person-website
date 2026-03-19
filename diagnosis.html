@@ -38,14 +38,33 @@
                 </div>
 
                 <div style="display: grid; gap: 1.5rem;">
-                    <textarea placeholder="예: 매일 반복되는 송장 번호 입력, 이메일 문의 응대, 유튜브 쇼츠 대본 작성 등" style="width: 100%; height: 200px; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 1rem;"></textarea>
-                    <button class="btn btn-gradient" style="justify-content: center; padding: 1.5rem; border-radius: 20px; font-size: 1.25rem;">
+                    <textarea id="userInput" placeholder="예: 매일 반복되는 송장 번호 입력, 이메일 문의 응대, 유튜브 쇼츠 대본 작성 등" style="width: 100%; height: 200px; padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 1rem;"></textarea>
+                    <button id="diagnoseBtn" class="btn btn-gradient" style="justify-content: center; padding: 1.5rem; border-radius: 20px; font-size: 1.25rem;">
                         <i data-lucide="sparkles"></i> AI로 예상 절감 효율 진단하기
                     </button>
                 </div>
 
-                <div style="margin-top: 2rem; padding: 2rem; background: var(--gradient-premium); color: white; border-radius: 20px; text-align: center; opacity: 0.1;" id="result-dummy">
-                    <p>진단 중입니다...</p>
+                <div id="loadingArea" style="display: none; margin-top: 3rem; text-align: center;">
+                    <div class="spinner" style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3b82f6; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+                    <p style="margin-top: 1rem; font-weight: 500; color: var(--accent-blue);">시카고 서버에서 AI 분석 중...</p>
+                </div>
+
+                <div id="resultArea" style="display: none; margin-top: 3rem; padding: 3rem; background: #f0f7ff; border-radius: 30px; border: 2px solid #3b82f6;">
+                    <h2 style="text-align: center; margin-bottom: 2.5rem; color: #1e3a8a;">진단 결과: <span style="color: #3b82f6;">상당한 개선 가능</span></h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; text-align: center;">
+                        <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">주간 확보 가능 시간</div>
+                            <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6;">18.5<span style="font-size: 1rem;"> 시간</span></div>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                            <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">월간 예상 절감 비용</div>
+                            <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6;">$2,400<span style="font-size: 1rem;"> +</span></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #fff; border-radius: 15px; font-size: 0.95rem; line-height: 1.6; color: #475569;">
+                        <strong>조언:</strong> 나열하신 업무들은 2GOSOO의 <strong>'BUSINESS'</strong> 플랜으로 약 85% 이상 자동화가 가능합니다. 특히 기술적인 도구 세팅 후 대표님이 직접 관리하실 필요가 없는 구조로 설계 가능합니다.
+                    </div>
+                    <button class="btn btn-gradient" style="width: 100%; margin-top: 2rem; justify-content: center;" onclick="location.href='contact.html'">상세 PDF 리포트 받기</button>
                 </div>
             </div>
         </div>
@@ -58,8 +77,44 @@
         </div>
     </footer>
 
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
     <script>
         lucide.createIcons();
+
+        const diagnoseBtn = document.getElementById('diagnoseBtn');
+        const loadingArea = document.getElementById('loadingArea');
+        const resultArea = document.getElementById('resultArea');
+        const userInput = document.getElementById('userInput');
+
+        diagnoseBtn.addEventListener('click', () => {
+            if (userInput.value.trim().length < 5) {
+                alert('업무 내용을 조금 더 자세히 입력해 주세요.');
+                return;
+            }
+
+            // UI Feedback
+            diagnoseBtn.disabled = true;
+            diagnoseBtn.style.opacity = '0.5';
+            loadingArea.style.display = 'block';
+            resultArea.style.display = 'none';
+
+            // Simulate AI Processing
+            setTimeout(() => {
+                loadingArea.style.display = 'none';
+                resultArea.style.display = 'block';
+                diagnoseBtn.disabled = false;
+                diagnoseBtn.style.opacity = '1';
+                
+                // Scroll to result
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 2500);
+        });
     </script>
 </body>
 </html>

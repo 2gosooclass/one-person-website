@@ -25,58 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    const handleScroll = () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-
-    // Language Switching Logic
-    const langBtn = document.querySelector('.lang-switcher');
-    const krBtn = langBtn?.querySelector('span:first-child');
-    const enBtn = langBtn?.querySelector('span:last-child');
-    let currentLang = 'KR';
-
-    const translations = {
-        'KR': {
-            'hero-title': 'GLOBAL AI AGENT FROM CHICAGO.',
-            'hero-subtitle': '미국 시카고 본사와 한국을 연결하는 프리미엄 AI 자동화 솔루션. 글로벌 스탠다드의 기술력으로 대표님의 비즈니스를 무한 확장시킵니다.',
-            'contact-btn': '상담 신청'
-        },
-        'EN': {
-            'hero-title': 'GLOBAL AI AGENT FROM CHICAGO.',
-            'hero-subtitle': 'Premium AI Automation connecting Chicago HQ and Korea. We scale your business with global standard technology.',
-            'contact-btn': 'Contact Us'
-        }
-    };
-
-    const updateLanguage = (lang) => {
-        currentLang = lang;
-        if (lang === 'KR') {
-            krBtn.style.color = 'var(--accent-blue)';
-            enBtn.style.color = '#94a3b8';
-            document.documentElement.lang = 'ko';
-        } else {
-            enBtn.style.color = 'var(--accent-blue)';
-            krBtn.style.color = '#94a3b8';
-            document.documentElement.lang = 'en';
-        }
-        
-        // Simple text swap examples (can expand as needed)
-        const subtitle = document.querySelector('.hero-subtitle');
-        if (subtitle) subtitle.textContent = translations[lang]['hero-subtitle'];
-        
-        const navCtaBtn = document.querySelector('.nav-cta .btn-primary');
-        if (navCtaBtn) navCtaBtn.textContent = translations[lang]['contact-btn'];
-    };
-
-    krBtn?.addEventListener('click', () => updateLanguage('KR'));
-    enBtn?.addEventListener('click', () => updateLanguage('EN'));
+    if (navbar) {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+    }
 
     // Smooth scroll for nav links (existing)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
